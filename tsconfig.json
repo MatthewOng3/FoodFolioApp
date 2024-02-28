@@ -1,0 +1,30 @@
+{
+    "extends": "expo/tsconfig.base",
+    "compilerOptions": {
+        "strict": false,
+        "noImplicitAny": false,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "isolatedModules": true,
+        "jsx": "react-native",
+        "moduleResolution": "node",
+        "baseUrl": ".",
+        "resolveJsonModule": true,
+        "paths": {
+            "@/*": ["src/*"],
+            "@components/*": ["src/components/*"],
+            "@contexts/*": ["src/contexts/*"],
+            "@database/*": ["src/database/*"],
+            "@hooks/*": ["src/hooks/*"],
+            "@redux_store/*": ["src/redux_store/*"],
+            "@screens/*": ["src/screens/*"],
+            "@util/*": ["src/util/*"]
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "babel.config.js",
+        "metro.config.js",
+        "jest.config.js"
+    ]
+}

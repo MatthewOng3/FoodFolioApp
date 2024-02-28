@@ -1,0 +1,45 @@
+image: node:18
+
+definitions:
+    caches:
+        npm: ~/.npm
+    steps:
+        - step: &lint
+              name: Code linting
+              script:
+                  - npm install
+                  - npm run prettier
+                  - npm run lint
+              caches:
+                  - node
+
+pipelines:
+    default:
+        - step: *lint
+    branches:
+        master:
+            - step: *lint
+            - step:
+                  name: Build for Android
+                  trigger: manual
+                  script:
+                      - npm ci
+                      - npx eas-cli build --platform android --non-interactive --no-wait
+                  caches:
+                      - npm
+            - step:
+                  name: Build and Submit to iOS
+                  trigger: manual
+                  script:
+                      - npm ci
+                      - npx eas-cli build --platform ios --non-interactive --no-wait --auto-submit
+                  caches:
+                      - npm
+#        - step:
+#            name: Build and Submit to App Stores
+#            trigger: manual
+#            script:
+#              - npm ci
+#              - npx eas-cli build --platform all --non-interactive --no-wait --auto-submit
+#            caches:
+#              - npm

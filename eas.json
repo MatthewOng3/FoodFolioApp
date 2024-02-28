@@ -1,0 +1,55 @@
+{
+    "cli": {
+        "version": ">= 5.6.0"
+    },
+    "build": {
+        "development": {
+            "developmentClient": true,
+            "distribution": "internal",
+            "ios": {
+                "resourceClass": "m-medium"
+            },
+            "env": {
+                "SUPABASE_URL": "https://cnshbrqcwvjgdtxixuct.supabase.co",
+                "SUPABASE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNuc2hicnFjd3ZqZ2R0eGl4dWN0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTA2MTY3OTgsImV4cCI6MjAwNjE5Mjc5OH0.xG6rBsMrzUVCDMqKMA3hLtE_mTkBnEy1-LMRJ3UP3oQ",
+                "BACKEND_API_URL": "https://backend.foodfolioapp.com"
+            }
+        },
+        "development-simulator": {
+            "extends": "development",
+            "ios": {
+                "simulator": true
+            }
+        },
+        "preview": {
+            "ios": {
+                "simulator": true
+            },
+            "android": {
+                "buildType": "apk"
+            },
+            "distribution": "internal"
+        },
+        "production": {
+            "distribution": "store",
+            "ios": {
+                "resourceClass": "m-medium"
+            },
+            "env": {
+                "SUPABASE_URL": "https://cnshbrqcwvjgdtxixuct.supabase.co",
+                "SUPABASE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNuc2hicnFjd3ZqZ2R0eGl4dWN0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTA2MTY3OTgsImV4cCI6MjAwNjE5Mjc5OH0.xG6rBsMrzUVCDMqKMA3hLtE_mTkBnEy1-LMRJ3UP3oQ",
+                "BACKEND_API_URL": "https://backend.foodfolioapp.com"
+            }
+        }
+    },
+    "submit": {
+        "production": {
+            "ios": {
+                "appleId": "foodfolio69@gmail.com",
+                "ascAppId": "6475814823",
+                "appleTeamId": "62YSN62K35"
+            },
+            "android": {}
+        }
+    }
+}
